@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    告诉zookeeper当前项目是什么-->
+    <dubbo:application name="export_cargo_service"/>
+<!--    使用dubbo协议 走的是RPC方式   默认的端口号是20880-->
+<!--    消费者Controller来链接提供者Service时使用20881的端口号-->
+    <dubbo:protocol name="dubbo" port="20882"  host="127.0.0.1"/>
+<!--连接zookeeper-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+<!--    扫描的就是dubbo的@Service注解-->
+    <dubbo:annotation package="cn.itcast.service.cargo.impl"/>
+
+    <!--    service开始-->
+    <context:component-scan base-package="cn.itcast.service"/>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven/>
+
+
+</beans>

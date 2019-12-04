@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../dubbodemo_comsumer" />
+    <file type="web" url="file://$PROJECT_DIR$/../dubbodemo_provider" />
+    <file type="web" url="file://$PROJECT_DIR$/export_company_service" />
+    <file type="web" url="file://$PROJECT_DIR$/export_email_comsumer" />
+    <file type="web" url="file://$PROJECT_DIR$/export_manager_web" />
+    <file type="web" url="file://$PROJECT_DIR$/export_portal_web" />
+    <file type="web" url="file://$PROJECT_DIR$/export_stat_service" />
+    <file type="web" url="file://$PROJECT_DIR$/../spring_cxf_rs_provider" />
+    <file type="web" url="file://$PROJECT_DIR$/../spring_cxf_ws_provider" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../itcast-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/../PDF_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../quartz_demo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>

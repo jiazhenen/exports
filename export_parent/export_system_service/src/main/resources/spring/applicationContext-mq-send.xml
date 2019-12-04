@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/rabbit
+	http://www.springframework.org/schema/rabbit/spring-rabbit-1.4.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!-- 配置连接工厂 -->
+<rabbit:connection-factory id="connectionFactory" virtual-host="/saas"
+                           host="127.0.0.1" port="5672" username="saas" password="saas" />
+<!-- <bean id="connectionFactory" class="com.rabbitmq.client.ConnectionFactory">
+     <property name="host" value="127.0.0.1"/>
+     <property name="port" value="5672"/>
+     <property name="username" value="saas"/>
+     <property name="password" value="saas"/>
+     <property name="virtualHost" value="/saas"/>
+ </bean>-->
+<!-- 定义mq管理 -->
+<rabbit:admin connection-factory="connectionFactory" />
+
+<!-- 声明队列 -->
+<rabbit:queue name="spring.email.queue" auto-declare="true" durable="true" />
+
+<!-- 定义交换机绑定队列（路由模式） -->
+<rabbit:direct-exchange  name="spring.email.exchange">
+    <rabbit:bindings>
+        <rabbit:binding queue="spring.email.queue" key="user.insert" />
+    </rabbit:bindings>
+</rabbit:direct-exchange>
+<!-- 定义交换机绑定队列（路由模式）使用匹配符
+<rabbit:topic-exchange  id="springTestExchange" name="spring.test.exchange">
+    <rabbit:bindings>
+        <rabbit:binding queue="spring.test.queue" pattern="#.#" />
+    </rabbit:bindings>
+</rabbit:topic-exchange>
+-->
+<!-- 消息对象json转换类 -->
+<bean id="jsonMessageConverter"
+      class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter" />
+
+<!-- 定义模版 -->
+<rabbit:template id="rabbitTemplate" connection-factory="connectionFactory"
+                 exchange="spring.email.exchange"
+                 message-converter="jsonMessageConverter"/>
+
+
+
+</beans>

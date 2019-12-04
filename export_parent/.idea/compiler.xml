@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="export_commons" />
+        <module name="export_cargo_interface" />
+        <module name="export_domain" />
+        <module name="itcast-rabbitmq" />
+        <module name="export_stat_interface" />
+        <module name="export_stat_service" />
+        <module name="export_portal_web" />
+        <module name="export_dao" />
+        <module name="spring_email_demo" />
+        <module name="export_cargo_service" />
+        <module name="export_company_service" />
+        <module name="PDF_demo" />
+        <module name="quartz_demo" />
+        <module name="export_company_interface" />
+        <module name="export_system_service" />
+        <module name="export_manager_web" />
+        <module name="export_email_comsumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dubbodemo_comsumer" target="1.8" />
+      <module name="dubbodemo_interface" target="1.5" />
+      <module name="dubbodemo_provider" target="1.8" />
+      <module name="export_cargo_interface" target="1.8" />
+      <module name="export_cargo_service" target="1.8" />
+      <module name="export_commons" target="1.8" />
+      <module name="export_company_interface" target="1.8" />
+      <module name="export_company_service" target="1.8" />
+      <module name="export_dao" target="1.8" />
+      <module name="export_domain" target="1.8" />
+      <module name="export_email_comsumer" target="1.8" />
+      <module name="export_manager_web" target="1.8" />
+      <module name="export_parent" target="1.8" />
+      <module name="export_portal_web" target="1.8" />
+      <module name="export_stat_interface" target="1.8" />
+      <module name="export_stat_service" target="1.8" />
+      <module name="export_system_service" target="1.8" />
+      <module name="itcast-rabbitmq" target="1.5" />
+      <module name="mybatis_generator" target="1.5" />
+      <module name="PDF_demo" target="1.5" />
+      <module name="POI_demo" target="1.5" />
+      <module name="qiniu_demo" target="1.5" />
+      <module name="quartz_demo" target="1.8" />
+      <module name="spring_cxf_rs_consumer" target="1.5" />
+      <module name="spring_cxf_rs_provider" target="1.8" />
+      <module name="spring_cxf_ws_consumer" target="1.5" />
+      <module name="spring_cxf_ws_provider" target="1.8" />
+      <module name="spring_email_demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

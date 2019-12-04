@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/rabbit
+	http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 配置连接工厂 -->
+    <rabbit:connection-factory id="connectionFactory" virtual-host="/saas"
+                               host="127.0.0.1" port="5672" username="saas" password="saas" />
+    <!-- 定义mq管理 -->
+    <rabbit:admin connection-factory="connectionFactory" />
+
+    <!-- 声明队列 -->
+    <rabbit:queue  name="spring.email.queue" auto-declare="true" durable="true" />
+
+    <!-- 定义消费者 -->
+    <bean id="emailConsumer" class="cn.itcast.email.EmailConsumer" />
+
+    <!-- 定义消费者监听队列 -->
+    <rabbit:listener-container
+            connection-factory="connectionFactory">
+        <rabbit:listener ref="emailConsumer" queues="spring.email.queue" />
+    </rabbit:listener-container>
+
+</beans>
+
+
+

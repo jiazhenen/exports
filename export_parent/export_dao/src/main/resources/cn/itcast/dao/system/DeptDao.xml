@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.dao.system.DeptDao" >
+    <resultMap id="BaseResultMap" type="dept">
+        <id property="id" column="dept_id"/>
+        <result property="deptName" column="dept_name"/>
+        <result property="state" column="state"/>
+        <result property="companyId" column="company_id"/>
+        <result property="companyName" column="company_name"/>
+<!--        <result property="parentId" column="parent_id"/>-->
+        <association property="parent" column="parent_id" javaType="dept" select="findById"/>
+    </resultMap>
+
+    <select id="findAll" parameterType="string" resultMap="BaseResultMap">
+        select * from pe_dept where company_id=#{companyId} and is_deleted=0
+    </select>
+
+    <select id="findById" parameterType="string" resultMap="BaseResultMap">
+        select * from pe_dept where dept_id=#{id}
+    </select>
+
+    <insert id="save" parameterType="dept">
+        insert into pe_dept
+        (
+        dept_id,
+        dept_name,
+        parent_id,
+        state,
+        company_id,
+        company_name
+        )
+        values
+        (
+        #{id},
+        #{deptName},
+        #{parent.id},
+        #{state},
+        #{companyId},
+        #{companyName}
+        )
+    </insert>
+
+    <update id="update" parameterType="dept">
+        update pe_dept
+        <set>
+        <if test="deptName!=null and deptName!=''">
+            dept_name=#{deptName},
+        </if>
+            parent_id=#{parent.id},
+        <if test="state!=null">
+            state=#{state},
+        </if>
+        <if test="companyId!=null and companyId!=''">
+            company_id=#{companyId},
+        </if>
+        <if test="companyName!=null and companyName!=''">
+            company_name=#{companyName},
+         </if>
+        </set>
+        where dept_id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="string">
+        update pe_dept set is_deleted=1 where dept_id=#{id}
+    </delete>
+
+
+</mapper>

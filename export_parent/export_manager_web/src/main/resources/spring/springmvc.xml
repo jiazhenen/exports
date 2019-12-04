@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:component-scan base-package="cn.itcast.controller"/>
+
+    <mvc:annotation-driven/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+<!--    统一异常处理器-->
+    <bean class="cn.itcast.exception.SaaSException"/>
+
+    <aop:aspectj-autoproxy/>
+
+<!--    告诉zookeeper当前项目是什么-->
+    <dubbo:application name="export_manager_web"/>
+<!--    链接zookeeper注册中心-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+<!--    扫描的是@Reference-->
+    <dubbo:annotation package="cn.itcast.controller"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为 5MB -->
+        <property name="maxUploadSize">
+            <value>5242880</value>
+        </property>
+    </bean>
+
+</beans>

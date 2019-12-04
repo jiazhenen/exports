@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.dao.system.UserDao" >
+
+    <resultMap id="BaseResultMap" type="user">
+        <id column="user_id" property="id"/>
+        <result column="dept_id" property="deptId"/>
+        <result column="email" property="email"/>
+        <result column="user_name" property="userName"/>
+        <result column="station" property="station"/>
+        <result column="password" property="password"/>
+        <result column="state" property="state"/>
+        <result column="company_id" property="companyId"/>
+        <result column="company_name" property="companyName"/>
+        <result column="dept_name" property="deptName"/>
+        <result column="manager_id" property="managerId"/>
+        <result column="gender" property="gender"/>
+        <result column="telephone" property="telephone"/>
+        <result column="birthday" property="birthday"/>
+        <result column="degree" property="degree"/>
+        <result column="salary" property="salary"/>
+        <result column="join_date" property="joinDate"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <select id="findAll" parameterType="string" resultMap="BaseResultMap">
+      select * from pe_user where company_id=#{companyId} order by order_no ,create_time desc
+    </select>
+
+    <insert id="save" parameterType="user">
+ insert INTO pe_user(
+        user_id,
+        dept_id,
+        email,
+        user_name,
+        station,
+        password,
+        state,
+        company_id,
+        company_name,
+        dept_name,
+        manager_id,
+        gender,
+        telephone,
+        birthday,
+        degree,
+        salary,
+        join_date,
+        order_no,
+        create_by,
+        create_dept,
+        create_time,
+        update_by,
+        update_time,
+        remark
+        )
+        VALUES (
+        #{id},
+        #{deptId} ,
+        #{email} ,
+        #{userName} ,
+        #{station} ,
+        #{password} ,
+        #{state} ,
+        #{companyId} ,
+        #{companyName} ,
+        #{deptName} ,
+        #{managerId} ,
+        #{gender} ,
+        #{telephone} ,
+        #{birthday} ,
+        #{degree} ,
+        #{salary} ,
+        #{joinDate} ,
+        #{orderNo} ,
+        #{createBy} ,
+        #{createDept} ,
+        #{createTime} ,
+        #{updateBy} ,
+        #{updateTime} ,
+        #{remark}
+        )
+    </insert>
+
+    <update id="update" parameterType="user">
+        update pe_user
+        <set>
+            <if test="deptId!=null and deptId!=''">
+                dept_id     =#{deptId} ,
+            </if>
+            <if test="email!=null and email!=''">
+                email       =#{email} ,
+            </if>
+            <if test="userName!=null and userName!=''">
+                user_name   =#{userName} ,
+            </if>
+            <if test="station!=null and station!=''">
+                station     =#{station} ,
+            </if>
+            <if test="password!=null and password!=''">
+                password    =#{password} ,
+            </if>
+            <if test="state!=null and state!=''">
+                state       =#{state} ,
+            </if>
+            <if test="companyId!=null and companyId!=''">
+                company_id  =#{companyId} ,
+            </if>
+            <if test="companyName!=null and companyName!=''">
+                company_name=#{companyName} ,
+            </if>
+            <if test="deptName!=null and deptName!=''">
+                dept_name   =#{deptName} ,
+            </if>
+            <if test="managerId!=null and managerId!=''">
+                manager_id  =#{managerId} ,
+            </if>
+            <if test="gender!=null and gender!=''">
+                gender      =#{gender} ,
+            </if>
+            <if test="telephone!=null and telephone!=''">
+                telephone   =#{telephone} ,
+            </if>
+            <if test="birthday!=null and birthday!=''">
+                birthday    =#{birthday} ,
+            </if>
+            <if test="degree!=null and degree!=''">
+                degree      =#{degree} ,
+            </if>
+            <if test="salary!=null and salary!=''">
+                salary      =#{salary} ,
+            </if>
+            <if test="joinDate!=null and joinDate!=''">
+                join_date   =#{joinDate} ,
+            </if>
+            <if test="orderNo!=null and orderNo!=''">
+                order_no    =#{orderNo} ,
+            </if>
+            <if test="createBy!=null and createBy!=''">
+                create_by   =#{createBy} ,
+            </if>
+            <if test="createDept!=null and createDept!=''">
+                create_dept =#{createDept} ,
+            </if>
+            <if test="createTime!=null and createTime!=''">
+                create_time =#{createTime} ,
+            </if>
+            <if test="updateBy!=null and updateBy!=''">
+                update_by   =#{updateBy} ,
+            </if>
+            <if test="updateTime!=null and updateTime!=''">
+                update_time =#{updateTime} ,
+            </if>
+            <if test="remark!=null and remark!=''">
+                remark      =#{remark},
+            </if>
+        </set>
+        where user_id=#{id}
+    </update>
+
+
+    <select id="findById" parameterType="string" resultMap="BaseResultMap">
+        select * from pe_user where user_id=#{id}
+    </select>
+
+
+    <delete id="deleteById" parameterType="string">
+        delete from pe_user where user_id=#{id}
+    </delete>
+
+    <insert id="saveUserAndRole">
+        insert into pe_role_user (user_id,role_id) values (#{userid},#{roleid})
+    </insert>
+
+    <select id="findRoleIdsByUserId" parameterType="string" resultType="string">
+        select role_id from pe_role_user where user_id=#{userid}
+    </select>
+
+    <delete id="deleteRoleAndUserByUserId" parameterType="string">
+        delete from pe_role_user where user_id=#{userid}
+    </delete>
+
+    <select id="findByEmail" parameterType="string" resultMap="BaseResultMap">
+        select * from pe_user where email=#{email}
+    </select>
+
+<!--    userDao.saveUserAndRole(userid,roleIds);
+    <insert id="saveUserAndRole">
+        insert into pe_role_user (user_id,role_id) values
+        <foreach collection="roleIds" open="" close="" item="roleid" separator=",">
+         (#{userid},#{roleid})
+        </foreach>
+    </insert>
+    -->
+</mapper>

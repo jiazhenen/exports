@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.dao.stat.StatDao" >
+
+
+    <select id="factoryCharts" parameterType="string" resultType="map">
+        select factory_name as name , sum(amount) as value
+        from co_contract_product where company_id=#{companyId} GROUP BY factory_name
+    </select>
+
+    <select id="sellCharts" parameterType="string" resultType="map">
+     select product_no as name,sum(cnumber) as value from co_contract_product
+     where company_id=#{companyId}   GROUP BY product_no order by value desc limit 15
+    </select>
+
+    <select id="onlineCharts" parameterType="string" resultType="map">
+    select  soi.A1 as name, IFNULL(t.total,0) as value from st_online_info soi LEFT JOIN
+(select DATE_FORMAT(time,'%H') as hours ,count(0) total from st_sys_log where company_id=#{companyId} GROUP BY  DATE_FORMAT(time,'%H')) t
+on soi.A1=t.hours
+    </select>
+
+</mapper>
