@@ -26,4 +26,14 @@ public class StatServiceImpl implements StatService {
     public List<Map> onlineCharts(String companyId) {
         return statDao.onlineCharts(companyId);
     }
+
+    @Override
+    public List<Map> product() {
+        return statDao.product();
+    }
+
+    @Override
+    public List<Map> caozuo(String companyId) {
+        return statDao.caozuo(companyId);
+    }
 }

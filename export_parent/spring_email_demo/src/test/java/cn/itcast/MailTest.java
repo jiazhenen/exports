@@ -18,7 +18,7 @@ public class MailTest {
     public void testSend(){
 //        mailUtil.sendEmail("shiyilong128@126.com","spring整合邮件","看能不能收到信息！！！");
 //        mailUtil.sendEmailWithAttachment("shiyilong128@126.com","spring整合邮件","看能不能收到信息！！！");
-        mailUtil.sendEmailWithAttachmentAndContentPic("shiyilong128@126.com","spring整合邮件","看能不能收到信息！！！");
+        //mailUtil.sendEmailWithAttachmentAndContentPic("shiyilong128@126.com","spring整合邮件","看能不能收到信息！！！");
         System.out.println("++++++++++++++");
     }
 

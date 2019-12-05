@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.qiniu:qiniu-java-sdk:7.2.27">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27.jar!/" />
+      <root url="jar://E:/dev/repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27-javadoc.jar!/" />
+      <root url="jar://E:/dev/repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27-sources.jar!/" />
+      <root url="jar://E:/dev/repository-work/com/qiniu/qiniu-java-sdk/7.2.27/qiniu-java-sdk-7.2.27-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

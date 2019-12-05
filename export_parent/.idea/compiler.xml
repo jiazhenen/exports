@@ -7,21 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="export_commons" />
-        <module name="export_cargo_interface" />
-        <module name="export_domain" />
+        <module name="export_manager_web" />
+        <module name="export_system_service" />
         <module name="itcast-rabbitmq" />
         <module name="export_stat_interface" />
-        <module name="export_stat_service" />
-        <module name="export_portal_web" />
+        <module name="export_domain" />
         <module name="export_dao" />
-        <module name="spring_email_demo" />
         <module name="export_cargo_service" />
+        <module name="spring_email_demo" />
+        <module name="export_stat_service" />
         <module name="export_company_service" />
         <module name="PDF_demo" />
         <module name="quartz_demo" />
         <module name="export_company_interface" />
-        <module name="export_system_service" />
-        <module name="export_manager_web" />
+        <module name="export_portal_web" />
+        <module name="export_cargo_interface" />
         <module name="export_email_comsumer" />
       </profile>
     </annotationProcessing>

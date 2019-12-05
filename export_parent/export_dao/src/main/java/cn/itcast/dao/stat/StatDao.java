@@ -9,4 +9,8 @@ public interface StatDao {
     List<Map> sellCharts(String companyId);
 
     List<Map> onlineCharts(String companyId);
+
+    List<Map> product();
+
+    List<Map> caozuo(String companyId);
 }

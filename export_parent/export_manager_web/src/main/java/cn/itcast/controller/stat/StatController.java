@@ -45,4 +45,14 @@ public class StatController extends BaseController {
         return statService.onlineCharts(getCompanyId());
 
     }
+    @RequestMapping(value = "/product",name = "产品市场价排行")
+    @ResponseBody
+    public List<Map> product(){
+        return statService.product();
+    }
+    @RequestMapping(value = "/caozuo",name = "操作次数排行")
+    @ResponseBody
+    public List<Map> caozuo(){
+        return statService.caozuo(getCompanyId());
+    }
 }
