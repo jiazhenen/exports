@@ -69,20 +69,6 @@ public class ShippingServiceImpl implements ShippingService {
         shippingDao.updateByPrimaryKeySelective(shipping);
     }
 
-
-
-
-    @Override
-    public PageInfo findByState(Integer page, Integer pageSize, Integer state, String companyId) {
-        PageHelper.startPage(page,pageSize);
-        List<Packing> packingList = packingDao.findByState(state, companyId);
-        return new PageInfo<>(packingList,5);
-
-    }
-
-
-
-
     @Override
     public void delete(String shippingOrderId) {
         shippingDao.deleteByPrimaryKey(shippingOrderId);
@@ -95,5 +81,15 @@ public class ShippingServiceImpl implements ShippingService {
         return new PageInfo(shippings, 5);
     }
 
-
+    //根据状态查询
+    @Override
+    public PageInfo findByState(int page, int size, int i, String companyId) {
+        PageHelper.startPage(page,size);
+        ShippingExample example = new ShippingExample();
+        ShippingExample.Criteria criteria = example.createCriteria();
+        criteria.andCompanyIdEqualTo(companyId);
+        criteria.andStateEqualTo(i);
+        List<Shipping> packingList = shippingDao.selectByExample(example);
+        return new PageInfo<>(packingList,5);
+    }
 }

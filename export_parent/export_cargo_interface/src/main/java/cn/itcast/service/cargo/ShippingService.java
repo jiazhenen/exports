@@ -13,11 +13,10 @@ public interface ShippingService {
 
     void update(Shipping shipping);
 
-    PageInfo findByState(Integer page, Integer pageSize, Integer state, String companyId);
-
-
     void delete(String id);
+
 
     PageInfo findAll(ShippingExample shippingExample, int page, int size);
 
+    PageInfo findByState(int page, int size, int i, String companyId);
 }

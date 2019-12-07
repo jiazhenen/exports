@@ -86,9 +86,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    SHIPPING_ORDER_ID, ORDER_TYPE, SHIPPER, CONSIGNEE, NOTIFY_PARTY, LC_NO, PORT_OF_LOADING, 
-    PORT_OF_TRANS, PORT_OF_DISCHARGE, LOADING_DATE, LIMIT_DATE, IS_BATCH, IS_TRANS, COPY_NUM, 
-    REMARK, SPECIAL_CONDITION, FREIGHT, CHECK_BY, STATE, CREATE_BY, CREATE_DEPT, CREATE_TIME, 
+    SHIPPING_ORDER_ID, ORDER_TYPE, SHIPPER, CONSIGNEE, NOTIFY_PARTY, LC_NO, PORT_OF_LOADING,
+    PORT_OF_TRANS, PORT_OF_DISCHARGE, LOADING_DATE, LIMIT_DATE, IS_BATCH, IS_TRANS, COPY_NUM,
+    REMARK, SPECIAL_CONDITION, FREIGHT, CHECK_BY, STATE, CREATE_BY, CREATE_DEPT, CREATE_TIME,
     company_id, company_name
   </sql>
   <select id="selectByExample" parameterType="cn.itcast.domain.cargo.ShippingExample" resultMap="BaseResultMap">
@@ -106,7 +106,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from co_shipping_order
     where SHIPPING_ORDER_ID = #{shippingOrderId,jdbcType=VARCHAR}
@@ -122,24 +122,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.itcast.domain.cargo.Shipping">
-    insert into co_shipping_order (SHIPPING_ORDER_ID, ORDER_TYPE, SHIPPER, 
-      CONSIGNEE, NOTIFY_PARTY, LC_NO, 
-      PORT_OF_LOADING, PORT_OF_TRANS, PORT_OF_DISCHARGE, 
-      LOADING_DATE, LIMIT_DATE, IS_BATCH, 
-      IS_TRANS, COPY_NUM, REMARK, 
-      SPECIAL_CONDITION, FREIGHT, CHECK_BY, 
-      STATE, CREATE_BY, CREATE_DEPT, 
-      CREATE_TIME, company_id, company_name
-      )
-    values (#{shippingOrderId,jdbcType=VARCHAR}, #{orderType,jdbcType=VARCHAR}, #{shipper,jdbcType=VARCHAR}, 
-      #{consignee,jdbcType=VARCHAR}, #{notifyParty,jdbcType=VARCHAR}, #{lcNo,jdbcType=VARCHAR}, 
-      #{portOfLoading,jdbcType=VARCHAR}, #{portOfTrans,jdbcType=VARCHAR}, #{portOfDischarge,jdbcType=VARCHAR}, 
-      #{loadingDate,jdbcType=TIMESTAMP}, #{limitDate,jdbcType=TIMESTAMP}, #{isBatch,jdbcType=CHAR}, 
-      #{isTrans,jdbcType=CHAR}, #{copyNum,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{specialCondition,jdbcType=VARCHAR}, #{freight,jdbcType=VARCHAR}, #{checkBy,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{companyId,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}
-      )
+    insert into co_shipping_order (SHIPPING_ORDER_ID, ORDER_TYPE, SHIPPER,
+    CONSIGNEE, NOTIFY_PARTY, LC_NO,
+    PORT_OF_LOADING, PORT_OF_TRANS, PORT_OF_DISCHARGE,
+    LOADING_DATE, LIMIT_DATE, IS_BATCH,
+    IS_TRANS, COPY_NUM, REMARK,
+    SPECIAL_CONDITION, FREIGHT, CHECK_BY,
+    STATE, CREATE_BY, CREATE_DEPT,
+    CREATE_TIME, company_id, company_name
+    )
+    values (#{shippingOrderId,jdbcType=VARCHAR}, #{orderType,jdbcType=VARCHAR}, #{shipper,jdbcType=VARCHAR},
+    #{consignee,jdbcType=VARCHAR}, #{notifyParty,jdbcType=VARCHAR}, #{lcNo,jdbcType=VARCHAR},
+    #{portOfLoading,jdbcType=VARCHAR}, #{portOfTrans,jdbcType=VARCHAR}, #{portOfDischarge,jdbcType=VARCHAR},
+    #{loadingDate,jdbcType=TIMESTAMP}, #{limitDate,jdbcType=TIMESTAMP}, #{isBatch,jdbcType=CHAR},
+    #{isTrans,jdbcType=CHAR}, #{copyNum,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+    #{specialCondition,jdbcType=VARCHAR}, #{freight,jdbcType=VARCHAR}, #{checkBy,jdbcType=VARCHAR},
+    #{state,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createDept,jdbcType=VARCHAR},
+    #{createTime,jdbcType=TIMESTAMP}, #{companyId,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}
+    )
   </insert>
   <insert id="insertSelective" parameterType="cn.itcast.domain.cargo.Shipping">
     insert into co_shipping_order
@@ -381,29 +381,29 @@
   <update id="updateByExample" parameterType="map">
     update co_shipping_order
     set SHIPPING_ORDER_ID = #{record.shippingOrderId,jdbcType=VARCHAR},
-      ORDER_TYPE = #{record.orderType,jdbcType=VARCHAR},
-      SHIPPER = #{record.shipper,jdbcType=VARCHAR},
-      CONSIGNEE = #{record.consignee,jdbcType=VARCHAR},
-      NOTIFY_PARTY = #{record.notifyParty,jdbcType=VARCHAR},
-      LC_NO = #{record.lcNo,jdbcType=VARCHAR},
-      PORT_OF_LOADING = #{record.portOfLoading,jdbcType=VARCHAR},
-      PORT_OF_TRANS = #{record.portOfTrans,jdbcType=VARCHAR},
-      PORT_OF_DISCHARGE = #{record.portOfDischarge,jdbcType=VARCHAR},
-      LOADING_DATE = #{record.loadingDate,jdbcType=TIMESTAMP},
-      LIMIT_DATE = #{record.limitDate,jdbcType=TIMESTAMP},
-      IS_BATCH = #{record.isBatch,jdbcType=CHAR},
-      IS_TRANS = #{record.isTrans,jdbcType=CHAR},
-      COPY_NUM = #{record.copyNum,jdbcType=VARCHAR},
-      REMARK = #{record.remark,jdbcType=VARCHAR},
-      SPECIAL_CONDITION = #{record.specialCondition,jdbcType=VARCHAR},
-      FREIGHT = #{record.freight,jdbcType=VARCHAR},
-      CHECK_BY = #{record.checkBy,jdbcType=VARCHAR},
-      STATE = #{record.state,jdbcType=INTEGER},
-      CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
-      CREATE_DEPT = #{record.createDept,jdbcType=VARCHAR},
-      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
-      company_id = #{record.companyId,jdbcType=VARCHAR},
-      company_name = #{record.companyName,jdbcType=VARCHAR}
+    ORDER_TYPE = #{record.orderType,jdbcType=VARCHAR},
+    SHIPPER = #{record.shipper,jdbcType=VARCHAR},
+    CONSIGNEE = #{record.consignee,jdbcType=VARCHAR},
+    NOTIFY_PARTY = #{record.notifyParty,jdbcType=VARCHAR},
+    LC_NO = #{record.lcNo,jdbcType=VARCHAR},
+    PORT_OF_LOADING = #{record.portOfLoading,jdbcType=VARCHAR},
+    PORT_OF_TRANS = #{record.portOfTrans,jdbcType=VARCHAR},
+    PORT_OF_DISCHARGE = #{record.portOfDischarge,jdbcType=VARCHAR},
+    LOADING_DATE = #{record.loadingDate,jdbcType=TIMESTAMP},
+    LIMIT_DATE = #{record.limitDate,jdbcType=TIMESTAMP},
+    IS_BATCH = #{record.isBatch,jdbcType=CHAR},
+    IS_TRANS = #{record.isTrans,jdbcType=CHAR},
+    COPY_NUM = #{record.copyNum,jdbcType=VARCHAR},
+    REMARK = #{record.remark,jdbcType=VARCHAR},
+    SPECIAL_CONDITION = #{record.specialCondition,jdbcType=VARCHAR},
+    FREIGHT = #{record.freight,jdbcType=VARCHAR},
+    CHECK_BY = #{record.checkBy,jdbcType=VARCHAR},
+    STATE = #{record.state,jdbcType=INTEGER},
+    CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
+    CREATE_DEPT = #{record.createDept,jdbcType=VARCHAR},
+    CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+    company_id = #{record.companyId,jdbcType=VARCHAR},
+    company_name = #{record.companyName,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
