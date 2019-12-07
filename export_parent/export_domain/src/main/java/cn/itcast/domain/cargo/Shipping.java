@@ -44,7 +44,7 @@ public class Shipping implements Serializable {
 
     private String checkBy;
 
-    private Integer state;
+    private Integer state; //0-草稿 1-已上报 2-发票
 
     private String createBy;
 

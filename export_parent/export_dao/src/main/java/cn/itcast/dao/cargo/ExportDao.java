@@ -2,6 +2,7 @@ package cn.itcast.dao.cargo;
 
 import cn.itcast.domain.cargo.Export;
 import cn.itcast.domain.cargo.ExportExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public interface ExportDao {
     int updateByPrimaryKeySelective(Export record);
 
 
-    List<Export> findByState(Integer state, String companyId);
+    List<Export> findByState(@Param("state") Integer state, @Param("companyId") String companyId);
 
 
 }

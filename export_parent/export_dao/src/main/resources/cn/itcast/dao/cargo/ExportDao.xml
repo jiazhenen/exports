@@ -310,4 +310,9 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
+
+    <select id="findByState" resultMap="BaseResultMap">
+        select * from co_export where state=#{state} and company_id=#{companyId}
+    </select>
+
 </mapper>
