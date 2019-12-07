@@ -1,8 +1,11 @@
 package cn.itcast.service.cargo.impl;
 
 import cn.itcast.dao.cargo.InvoiceDao;
+import cn.itcast.dao.cargo.PackingDao;
+import cn.itcast.dao.cargo.ShippingDao;
 import cn.itcast.domain.cargo.Invoice;
 import cn.itcast.domain.cargo.InvoiceExample;
+import cn.itcast.domain.cargo.Shipping;
 import cn.itcast.service.cargo.InvoiceService;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
@@ -15,10 +18,23 @@ import java.util.List;
 public class InvoiceServiceImpl implements InvoiceService {
     @Autowired
     InvoiceDao invoiceDao;
+    @Autowired
+    private ShippingDao shippingDao;
+    @Autowired
+    private PackingDao packingDao;
+
 
     @Override
     public void save(Invoice invoice) {
+
         invoiceDao.insert(invoice);
+        //修改委托单状态
+        Shipping shipping = new Shipping();
+        shipping.getShippingOrderId();
+        shipping.setState(2);
+        shippingDao.updateByPrimaryKey(shipping);
+        //修改装箱单状态
+
     }
 
     @Override

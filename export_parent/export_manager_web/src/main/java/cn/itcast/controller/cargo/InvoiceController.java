@@ -4,6 +4,7 @@ import cn.itcast.controller.BaseController;
 import cn.itcast.domain.cargo.Invoice;
 import cn.itcast.domain.cargo.InvoiceExample;
 import cn.itcast.service.cargo.InvoiceService;
+import cn.itcast.service.cargo.ShippingService;
 import cn.itcast.utils.BeanMapUtils;
 import cn.itcast.utils.DownloadUtil;
 import com.alibaba.druid.util.StringUtils;
@@ -32,6 +33,8 @@ public class InvoiceController extends BaseController {
     private InvoiceService invoiceService;
     @Autowired
     private DownloadUtil downloadUtil;
+    @Reference
+    private ShippingService shippingService;
 
     @RequestMapping(value = "/list", name = "进入发票列表")
     public String findPage(@RequestParam(name = "page", defaultValue = "1") int pageNum, @RequestParam(defaultValue = "10") int size) {
@@ -46,9 +49,9 @@ public class InvoiceController extends BaseController {
     }
 
     @RequestMapping(value = "/toAdd", name = "进入添加发票页面")
-    public String toAdd() {
-//        PageInfo page =
-//                request.setAttribute("page",page);
+    public String toAdd(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageInfo pageInfo = shippingService.findByState(page,pageSize,1,getCompanyId());
+                request.setAttribute("page",pageInfo);
 
         return "cargo/invoice/invoice-add";
     }
