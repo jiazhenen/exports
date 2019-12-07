@@ -21,6 +21,9 @@ on soi.A1=t.hours
 
     <select id="product"  resultType="map">
         select hwname as name , jiage as `value` from test order by `value` desc limit 10
+
+        select cep.`product_no` AS NAME, cep.`price` AS VALUE  from `co_product` cp right join
+co_export_product cep on cp.factoryId = cep.factory_id group by name order by value desc limit 10
     </select>
     <select id="caozuo" parameterType="string" resultType="map">
         SELECT ip AS `name`, COUNT(ip) AS `value`
