@@ -48,7 +48,7 @@
 
                     <div class="col-md-2 title">发票号</div>
                     <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="发票号" name="scNo" value="${invoice.scNo}">
+                        <input type="text" class="form-control" placeholder="发票号" name="scNo" value="${invoice.invoiceId}">
                     </div>
 
                     <div class="col-md-2 title">贸易条款</div>
@@ -56,9 +56,9 @@
                         <input type="text" class="form-control" placeholder="贸易条款" name="tradeTerms" value="${invoice.tradeTerms}">
                     </div>
 
-                    <div class="col-md-2 title">合同号</div>
+                    <div class="col-md-2 title">提单号</div>
                     <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="合同号" name="blNo" value="${invoice.blNo}">
+                        <input type="text" class="form-control" placeholder="提单号" name="blNo" value="${invoice.blNo}">
                     </div>
                 </div>
 
@@ -148,9 +148,9 @@
                                         <c:if test="${o.state==0}">
                                             <a href="${ctx}/cargo/shipping/toUpdate.do?id=${o.shippingOrderId}">[编辑]</a>
                                         </c:if>
-                                        <c:if test="${o.state==1}">
-                                            <a href="/cargo/shipping/exportPdf.do?id=${o.shippingOrderId}">[下载]</a>
-                                        </c:if>
+<%--                                        <c:if test="${o.state==1}">--%>
+<%--                                            <a href="/cargo/shipping/exportPdf.do?id=${o.shippingOrderId}">[下载]</a>--%>
+<%--                                        </c:if>--%>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -166,7 +166,7 @@
                 <!-- .box-footer-->
                 <div class="box-footer">
                     <jsp:include page="../../common/page.jsp">
-                        <jsp:param value="/cargo/finance/toAdd.do" name="pageUrl"/>
+                        <jsp:param value="/cargo/shipping/toAdd.do" name="pageUrl"/>
                     </jsp:include>
                 </div>
                 <!-- /.box-footer-->
