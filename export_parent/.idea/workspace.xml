@@ -9,21 +9,11 @@
     <bookmark url="file://$PROJECT_DIR$/export_commons/src/main/resources/config/qiniu.properties" description="qiniu.accessKey=SMYBP3MzIbmPBKwzizwy9sZdbhqNwX2ewi..." line="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c82d58be-07ba-4f94-9bd2-32dd3b1a4021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-update.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/shipping/shipping-add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/shipping/shipping-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/shipping/shipping-update.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/shipping/shipping-view.jsp" afterDir="false" />
+    <list default="true" id="c82d58be-07ba-4f94-9bd2-32dd3b1a4021" name="Default Changelist" comment="测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/InvoiceExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/InvoiceExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_email_comsumer/src/main/resources/spring/applicationContext-mq-receive.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_email_comsumer/src/main/resources/spring/applicationContext-mq-receive.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/home/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/export_domain/target/" />
@@ -66,68 +56,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3586">
-              <caret line="163" column="32" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/base.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/chart.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/chart1.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/demo.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/home/main.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/home/home.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="207">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/contract/contract-list.jsp">
+        <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/Invoice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1364">
-              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-145">
+              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -188,6 +151,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="yhy" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -238,12 +206,12 @@
         <option value="$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/InvoiceExample.java" />
         <option value="$PROJECT_DIR$/export_email_comsumer/src/main/resources/spring/applicationContext-mq-receive.xml" />
         <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-update.jsp" />
-        <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp" />
-        <option value="$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml" />
         <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-view.jsp" />
-        <option value="$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java" />
         <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp" />
         <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/home/home.jsp" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml" />
+        <option value="$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp" />
+        <option value="$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java" />
       </list>
     </option>
   </component>
@@ -279,8 +247,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="771" />
-    <option name="y" value="3" />
+    <option name="x" value="807" />
+    <option name="y" value="30" />
     <option name="width" value="978" />
     <option name="height" value="1089" />
   </component>
@@ -291,8 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,74 +269,6 @@
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn" type="462c0819:PsiDirectoryNode" />
-              <item name="itcast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn" type="462c0819:PsiDirectoryNode" />
-              <item name="itcast" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn" type="462c0819:PsiDirectoryNode" />
-              <item name="itcast" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="cargo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
               <item name="export_dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -434,7 +332,31 @@
               <item name="cn" type="462c0819:PsiDirectoryNode" />
               <item name="itcast" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="stat" type="462c0819:PsiDirectoryNode" />
+              <item name="cargo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -503,103 +425,13 @@
               <item name="itcast" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="cargo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cn" type="462c0819:PsiDirectoryNode" />
-              <item name="itcast" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="stat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="make" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="make" type="462c0819:PsiDirectoryNode" />
-              <item name="pdf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="cargo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="cargo" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_manager_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,7 +448,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -981,9 +813,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StatProvider" />
         <item itemvalue="Application.CargoProvider" />
         <item itemvalue="Application.CompanyProvider" />
-        <item itemvalue="Application.StatProvider" />
         <item itemvalue="Application.ComsumerProvider" />
         <item itemvalue="Application.QuartzTest" />
       </list>
@@ -1022,7 +854,7 @@
       <workItem from="1575513337547" duration="23370000" />
       <workItem from="1575554676684" duration="4244000" />
       <workItem from="1575591897335" duration="34807000" />
-      <workItem from="1575677798655" duration="1734000" />
+      <workItem from="1575677798655" duration="15253000" />
     </task>
     <task id="LOCAL-00001" summary="aaaaaa">
       <created>1575554392275</created>
@@ -1031,7 +863,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575554392275</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="aaaaaa杀杀毒">
+      <created>1575680636434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575680636434</updated>
+    </task>
+    <task id="LOCAL-00003" summary="测试">
+      <created>1575683379195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575683379195</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1067,7 +913,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251743000" />
+    <option name="totallyTimeSpent" value="265262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1082,7 +928,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49861497" weight="0.44536653" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49861497" visible="true" weight="0.2627346" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1097,7 +943,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.7888707" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49932975" weight="0.45845273" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49932975" weight="0.45844877" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -1161,7 +1007,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aaaaaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aaaaaa" />
+    <MESSAGE value="aaaaaa杀杀毒" />
+    <MESSAGE value="测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,65 +1030,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/FactoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_domain/target/classes/cn/itcast/domain/cargo/InvoiceExample.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2178">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/dev/repository-work/com/alibaba/dubbo/2.6.6/dubbo-2.6.6.jar!/com/alibaba/dubbo/config/spring/beans/factory/annotation/ReferenceAnnotationBeanPostProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/cargo/InvoiceDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="78" column="29" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/InvoiceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/dev/repository-work/org/mybatis/mybatis/3.2.8/mybatis-3.2.8.jar!/org/apache/ibatis/binding/MapperProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/InvoiceExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18854">
-          <caret line="883" column="57" selection-start-line="883" selection-start-column="45" selection-end-line="883" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ExtCproductExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ExtEproductExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1266,13 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/Invoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1309,27 +1091,6 @@
     <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/export/export-toExport.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-528" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709">
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-555">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
-          <caret line="198" column="68" lean-forward="true" selection-start-line="198" selection-start-column="68" selection-end-line="198" selection-end-column="68" />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/jsp/lib/jsp-impl.jar!/standardSchemas/jspxml2.xsd">
@@ -1386,29 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/InvoiceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/stat/StatController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="823">
@@ -1416,16 +1154,6 @@
           <folding>
             <element signature="e#1157#1158#0" expanded="true" />
             <element signature="e#1218#1219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/cn/itcast/service/cargo/InvoiceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1463,23 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="122" column="95" selection-start-line="122" selection-start-column="95" selection-end-line="122" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3586">
-          <caret line="163" column="32" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/base.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1512,10 +1223,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2359">
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="198" selection-start-line="198" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/product/product-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1743">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="133" column="49" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/cn/itcast/service/cargo/InvoiceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ExtEproductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ExtCproductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ExportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ExportProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ContractServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="47" column="42" lean-forward="true" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/ContractProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/InvoiceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/cn/itcast/service/cargo/impl/FactoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/cargo/InvoiceDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4158" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/stat/StatDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="207">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/Invoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/webapp/WEB-INF/pages/cargo/invoice/invoice-add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_manager_web/src/main/java/cn/itcast/controller/cargo/InvoiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
