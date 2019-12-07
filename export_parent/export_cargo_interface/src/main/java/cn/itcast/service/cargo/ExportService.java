@@ -20,5 +20,6 @@ public interface ExportService {
 
     void updateE(ExportResult exportResult);
 
-    PageInfo findByState(int page, int size, int i, String companyId);
+    PageInfo findByState(Integer page,Integer size,Integer state,String companyId);
+
 }

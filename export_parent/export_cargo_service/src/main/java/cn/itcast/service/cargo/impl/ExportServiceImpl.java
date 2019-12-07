@@ -139,4 +139,13 @@ public class ExportServiceImpl implements ExportService {
             exportProductDao.updateByPrimaryKeySelective(exportProduct);
         }
     }
+
+
+
+    @Override
+    public PageInfo findByState(Integer page,Integer size,Integer state,String companyId) {
+        PageHelper.startPage(page,size);
+        List<Export> exportList = exportDao.findByState(state, companyId);
+        return new PageInfo(exportList,5);
+    }
 }
