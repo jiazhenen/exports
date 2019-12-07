@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pFs6bnG1DhU9fBMfwWLWhUo1D5NjKUH9"></script>
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 	<title>根据起终点名称驾车导航</title>
-</head>
+	</head>
 <body>
 <div id="allmap"></div>
 <div id="driving_way">
