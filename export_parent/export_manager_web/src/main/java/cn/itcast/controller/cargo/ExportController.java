@@ -181,9 +181,18 @@ public class ExportController extends BaseController {
 
     }
 
-//    @RequestMapping("/map")
-//    public String map(){
-//
-//    }
+//    private String shipmentPort;		//装船港
+//    private String destinationPort;		//目的港
+    @RequestMapping("/map")
+    public String map(String id){
+        Export byId = exportService.findById(id);
+        String start = byId.getShipmentPort();
+        String end = byId.getDestinationPort();
+        System.out.println(start);
+        System.out.println(end);
+        request.setAttribute("start",start);
+        request.setAttribute("end",end);
+        return "forward:/map.jsp";
+    }
 
 }

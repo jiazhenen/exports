@@ -43,14 +43,13 @@
 	map.enableScrollWheelZoom(true);   //启用滚轮放大缩小，默认禁用
 </script>
 
-
 <%--驾车线路规划,计算驾车时间和距离--%>
 <script type="text/javascript">
     // 百度地图API功能
     let map = new BMap.Map("allmap");
 	map.enableScrollWheelZoom(true);   //启用滚轮放大缩小，默认禁用
 	map.centerAndZoom(new BMap.Point(116.404, 39.915), 12);
-    let output = "从${start}到${end}驾车需要";
+    let output = "从${start}到${end}货物运输需要";
     let searchComplete = function (results){
         if (transit.getStatus() != BMAP_STATUS_SUCCESS){
             return ;

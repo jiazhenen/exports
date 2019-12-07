@@ -145,6 +145,7 @@
                                 <c:if test="${o.state==2}">
                                     <a href="/cargo/export/exportPdf.do?id=${o.id}">[下载]</a>
                                 </c:if>
+                                <a href="/cargo/export/map.do?id=${o.id}">[线路]</a>
                             </td>
                         </tr>
                     </c:forEach>
