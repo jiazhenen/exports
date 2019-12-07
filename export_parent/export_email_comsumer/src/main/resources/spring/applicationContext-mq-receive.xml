@@ -15,6 +15,7 @@
     <!-- 声明队列 -->
     <rabbit:queue  name="spring.email.queue" auto-declare="true" durable="true" />
 
+
     <!-- 定义消费者 -->
     <bean id="emailConsumer" class="cn.itcast.email.EmailConsumer" />
 

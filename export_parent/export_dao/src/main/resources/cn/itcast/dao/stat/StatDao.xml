@@ -18,6 +18,7 @@
 (select DATE_FORMAT(time,'%H') as hours ,count(0) total from st_sys_log where company_id=#{companyId} GROUP BY  DATE_FORMAT(time,'%H')) t
 on soi.A1=t.hours
     </select>
+
     <select id="product"  resultType="map">
         select hwname as name , jiage as `value` from test order by `value` desc limit 10
     </select>

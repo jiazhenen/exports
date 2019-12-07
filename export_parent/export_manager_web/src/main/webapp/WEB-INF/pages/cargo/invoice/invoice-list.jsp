@@ -63,7 +63,7 @@
 <div id="frameContent" class="content-wrapper" style="margin-left:0px;">
     <section class="content-header">
         <h1>
-            发票管理
+            货运管理
             <small>发票管理</small>
         </h1>
         <ol class="breadcrumb">
@@ -116,6 +116,7 @@
                             </th>
                             <th class="sorting">发票号</th>
                             <th class="sorting">合同号</th>
+                            <th class="sorting">提单号</th>
                             <th class="sorting">贸易条款</th>
                             <th class="sorting">创建人</th>
                             <th class="sorting">创建日期</th>
@@ -127,28 +128,35 @@
                         <tbody>
                         <c:forEach items="${page.list}" var="o" varStatus="status">
                             <tr>
-                                <td><input type="checkbox" name="id" value="${o.id}"/></td>
-                                <td>${o.customName}</td>
-                                <td><a href="${ctx}/cargo/invoice/toView.do?id=${o.id}">${o.invoiceNo}</a></td>
-                                <td>
-                                        ${o.proNum}/${o.extNum}
-                                </td>
-                                <td>${o.inputBy}</td>
-                                <td>${o.inspector}</td>
-                                <td><fmt:formatDate value="${o.deliveryPeriod}" pattern="yyyy-MM-dd"/></td>
-                                <td><fmt:formatDate value="${o.shipTime}" pattern="yyyy-MM-dd"/></td>
+                                <td><input type="checkbox" name="id" value="${o.invoiceId}"/></td>
+
+<%--                                <td><a href="${ctx}/cargo/invoice/toView.do?id=${o.invoiceId}">${o.invoiceNo}</a></td>--%>
+                                <td>${o.invoiceId}</td>
+                                <td>${o.scNo}</td>
+                                <td>${o.blNo}</td>
                                 <td>${o.tradeTerms}</td>
-                                <td>${o.totalAmount}</td>
+                                <td>${o.createBy}</td>
+                                <td><fmt:formatDate value="${o.createTime}" pattern="yyyy-MM-dd"/></td>
+                                <td>${o.amount}</td>
+
+
                                 <td><c:if test="${o.state==0}">草稿</c:if>
                                     <c:if test="${o.state==1}"><font color="green">已上报</font></c:if>
-                                    <c:if test="${o.state==2}"><font color="red">出票</font></c:if>
+                                    <c:if test="${o.state==2}"><font color="green">取消</font></c:if>
                                 </td>
+
                                 <td>
-                                        <%--<a href="${ctx }/cargo/invoice/toView.do?id=${o.id}">[查看详情]</a>--%>
-                                    <c:if test="${o.state==0}">
-                                        <a href="${ctx }/cargo/invoice/toUpdate.do?id=${o.id}">[编辑]</a>
-                                        <a href="${ctx }/cargo/invoice/list.do?invoiceId=${o.id}">[货物]</a>
-<%--                                        <a href="${ctx }/cargo/invoice/toImport.do?invoiceId=${o.id}">[上传货物]</a>--%>
+                                        <%--<a href="${ctx }/cargo/invoice/toView.do?id=${o.invoiceId}">[查看详情]</a>--%>
+                                    <c:if test="${o.state==0||o.state==2}">
+                                        <a href="${ctx }/cargo/invoice/toUpdate.do?id=${o.invoiceId}">[编辑]</a>
+<%--                                        <a href="${ctx }/cargo/invoice/list.do?invoiceId=${o.invoiceId}">[货物]</a>--%>
+                                        <a href="${ctx }/cargo/invoice/toView.do?id=${o.invoiceId}">[查看详情]</a>
+<%--                                        <a href="${ctx }/cargo/invoice/toImport.do?invoiceId=${o.invoiceId}">[上传货物]</a>--%>
+                                    </c:if>
+                                    <c:if test="${o.state==1}">
+                                        <a href="${ctx }/cargo/invoice/toView.do?id=${o.invoiceId}">[查看详情]</a>
+                                        <%--<a href="${ctx }/cargo/invoice/toImport.do?invoiceId=${o.invoiceId}">[上传货物]</a>--%>
+<%--                                        <a href="${ctx }/cargo/invoice/invoicePdf.do?id=${o.invoiceId}">[下载]</a>--%>
                                     </c:if>
                                 </td>
                             </tr>
@@ -175,11 +183,10 @@
 
             </div>
             <!-- /.box-body -->
-
             <!-- .box-footer-->
             <div class="box-footer">
                 <jsp:include page="../../common/page.jsp">
-                    <jsp:param value="/cargo/shipping/list.do" name="pageUrl"/>
+                    <jsp:param value="/cargo/invoice/list.do" name="pageUrl"/>
                 </jsp:include>
             </div>
             <!-- /.box-footer-->

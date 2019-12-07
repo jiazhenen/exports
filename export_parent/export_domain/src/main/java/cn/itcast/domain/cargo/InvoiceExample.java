@@ -66,7 +66,7 @@ public class InvoiceExample implements Serializable {
         distinct = false;
     }
 
-    protected abstract static class GeneratedCriteria {
+    protected abstract static class GeneratedCriteria implements Serializable{
         protected List<Criterion> criteria;
 
         protected GeneratedCriteria() {
@@ -873,15 +873,15 @@ public class InvoiceExample implements Serializable {
             return (Criteria) this;
         }
     }
-
-    public static class Criteria extends GeneratedCriteria {
+                //
+    public static class Criteria extends GeneratedCriteria implements Serializable {
 
         protected Criteria() {
             super();
         }
     }
 
-    public static class Criterion {
+    public static class Criterion implements Serializable{
         private String condition;
 
         private Object value;
