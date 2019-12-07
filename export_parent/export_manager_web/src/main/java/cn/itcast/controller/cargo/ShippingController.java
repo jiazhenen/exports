@@ -1,6 +1,5 @@
 package cn.itcast.controller.cargo;
 
-
 import cn.itcast.controller.BaseController;
 import cn.itcast.domain.cargo.Shipping;
 import cn.itcast.domain.cargo.ShippingExample;

@@ -95,7 +95,7 @@
                             <button type="button" class="btn btn-default" title="删除" onclick='deleteById()'><i class="fa fa-trash-o"></i> 删除</button>
                             <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
                             <button type="button" class="btn btn-default" title="提交" onclick="submit()"><i class="fa fa-retweet"></i> 提交</button>
-                            <button type="button" class="btn btn-default" title="取消" onclick="cancel()"><i class="fa fa-retweet"></i> 取消</button>
+                            <button type="button" class="btn btn-default" title="取消" onclick="cancel()"><i class="fa fa-retweet"></i> 提交</button>
                         </div>
                     </div>
                 </div>
@@ -136,13 +136,13 @@
                             <td>${o.marks}</td>
                             <td><c:if test="${o.state==0}">草稿</c:if>
                                 <c:if test="${o.state==1}"><font color="#bdb76b">已上报</font></c:if>
-                                <c:if test="${o.state==2}"><font color="orange">委托</font></c:if>
+                                <c:if test="${o.state==2}"><font color="green">委托</font></c:if>
                             </td>
                             <td>
                                 <%--<a href="${ctx }/cargo/contract/toView.do?id=${o.id}">[查看详情]</a>--%>
                                 <c:if test="${o.state==0}">
                                     <a href="${ctx }/cargo/packing/toUpdate.do?packingListId=${o.packingListId}">[编辑]</a>
-                                    <a href="${ctx }/cargo/packing/list.do?id=${o.packingListId}">[打印]</a>
+                                    <a href="${ctx }/cargo/packing/list.do?id=${o.packingListId}">[待定内容]</a>
                                 </c:if>
                             </td>
                         </tr>
