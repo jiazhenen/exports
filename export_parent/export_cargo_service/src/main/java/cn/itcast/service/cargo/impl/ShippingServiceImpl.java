@@ -69,6 +69,20 @@ public class ShippingServiceImpl implements ShippingService {
         shippingDao.updateByPrimaryKeySelective(shipping);
     }
 
+
+
+
+    @Override
+    public PageInfo findByState(Integer page, Integer pageSize, Integer state, String companyId) {
+        PageHelper.startPage(page,pageSize);
+        List<Packing> packingList = packingDao.findByState(state, companyId);
+        return new PageInfo<>(packingList,5);
+
+    }
+
+
+
+
     @Override
     public void delete(String shippingOrderId) {
         shippingDao.deleteByPrimaryKey(shippingOrderId);
