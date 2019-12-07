@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file="../../base.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -21,13 +22,13 @@
     <!-- 内容头部 -->
     <section class="content-header">
         <h1>
-            委托管理
-            <small>委托单</small>
+            货运管理
+            <small>委托管理</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
             <li><a href="all-order-manage-list.html">委托管理</a></li>
-            <li class="active">委托单</li>
+            <li class="active">委托单查看</li>
         </ol>
     </section>
     <!-- 内容头部 /-->
@@ -35,127 +36,142 @@
     <!-- 正文区域 -->
     <section class="content">
 
-        <!--订单信息-->
-        <div class="panel panel-default">
-            <div class="panel-heading">委托单信息</div>
-            <!--action="$ctx/cargo/contract/edit.do"-->
-            <form id="editForm" method="post">
-                <input type="hidden" name="id" value="${shippingOrder.shippingOrderId}">
-                <div class="row data-type" style="margin: 0px">
-                    <div class="col-md-2 title">货运方式</div>
-                    <div class="col-md-4 data">
-                        <div class="form-group form-inline">
-                            <div class="radio"><label><input type="radio" ${shippingOrder.orderType=="海运"?'checked':''} name="packingUnit" value="PCS">海运</label></div>
-                            <div class="radio"><label><input type="radio" ${shippingOrder.orderType=="空运"?'checked':''} name="packingUnit" value="SETS">空运</label></div>
+            <!--委托单信息-->
+            <div class="panel panel-default">
+                <div class="panel-heading">查看委托单</div>
+                <form id="editForm" action="${ctx}/cargo/shipping/edit.do" method="post" >
+                    <input type="hidden" name="shippingOrderId" value="${shipping.shippingOrderId}">
+                    <div class="row data-type" style="margin: 0px">
+                        <div class="col-md-2 title">货运类型:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="货运类型" name="orderType" value="${shipping.orderType}">
                         </div>
-                    </div>
 
-                    <div class="col-md-2 title">货主</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="${packing.buyer}" name="shipper" value="${shippingOrder.shipper}">
-                    </div>
+                        <div class="col-md-2 title">托运方:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="托运方" name="shipper" value="${shipping.shipper}">
+                        </div>
 
-                    <div class="col-md-2 title">提单抬头</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="${packing.buyer}" name="consignee" value="${shippingOrder.consignee}">
-                    </div>
+                        <div class="col-md-2 title">收货方:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="收货方" name="consignee" value="${shipping.consignee}">
+                        </div>
 
-                    <div class="col-md-2 title">正本通知人</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="${packing.buyer}" name="notifyParty" value="${shippingOrder.notifyParty}">
-                    </div>
 
-                    <div class="col-md-2 title">信用证</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="信用证" name="lcNo" value="${shippingOrder.lcNo}">
-                    </div>
 
-                    <div class="col-md-2 title">装运港</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="装运港" name="portOfLoading" value="${shippingOrder.portOfLoading}">
-                    </div>
+                        <div class="col-md-2 title">通知人:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="通知人" name="notifyParty" value="${shipping.notifyParty}" >
+                        </div>
 
-                    <div class="col-md-2 title">转船港</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="转船港" name="portOfTrans" value="${shippingOrder.portOfTrans}">
-                    </div>
+                        <div class="col-md-2 title">信用证号:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="信用证号" name="lcNo" value="${shipping.lcNo}">
+                        </div>
 
-                    <div class="col-md-2 title">卸货港</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="卸货港" name="lcNo" value="${shippingOrder.portOfDischarge}">
-                    </div>
+                        <div class="col-md-2 title">装货港:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="装货港" name="portOfLoading" value="${shipping.portOfLoading}">
+                        </div>
 
-                    <div class="col-md-2 title">装期</div>
-                    <div class="col-md-4 data">
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                        <div class="col-md-2 title">转运港:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="转运港" name="portOfTrans" value="${shipping.portOfTrans}">
+                        </div>
+
+                        <div class="col-md-2 title">目的港:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="目的港" name="portOfDischarge" value="${shipping.portOfDischarge}">
+                        </div>
+
+                        <div class="col-md-2 title">装货日期:</div>
+                        <div class="col-md-4 data">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" placeholder="装货日期"  name="loadingDate" class="form-control pull-right"
+                                       value="<fmt:formatDate value="${shipping.loadingDate}" pattern="yyyy-MM-dd"/>" id="loadingDate">
                             </div>
-                            <input type="text" placeholder="装期"  name="signingDate" class="form-control pull-right"
-                                   value="<fmt:formatDate value="${shippingOrder.loadingDate}" pattern="yyyy-MM-dd"/>" id="loadingDate">
                         </div>
-                    </div>
 
-                    <div class="col-md-2 title">效期</div>
-                    <div class="col-md-4 data">
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                        <div class="col-md-2 title">有效日期:</div>
+                        <div class="col-md-4 data">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" placeholder="有效日期"  name="limitDate" class="form-control pull-right"
+                                       value="<fmt:formatDate value="${shipping.limitDate}" pattern="yyyy-MM-dd"/>" id="limitDate">
                             </div>
-                            <input type="text" placeholder="效期"  name="signingDate" class="form-control pull-right"
-                                   value="<fmt:formatDate value="${shippingOrder.limitDate}" pattern="yyyy-MM-dd"/>" id="limitDate">
                         </div>
-                    </div>
 
-                    <div class="col-md-2 title">是否分批</div>
-                    <div class="col-md-4 data">
-                        <div class="form-group form-inline">
-                            <div class="radio"><label><input type="radio" ${shippingOrder.isBatch=="是"?'checked':''} name="isBatch" value="1">是</label></div>
-                            <div class="radio"><label><input type="radio" ${shippingOrder.isBatch=="否"?'checked':''} name="isBatch" value="0">否</label></div>
+                        <div class="col-md-2 title">分批装运:</div>
+                        <div class="col-md-4 data">
+                            <select class="form-control" name="isBatch">
+                                <option value="">请选择</option>
+                                <option ${o.isBatch == "0" ?'selected':''} value="0">否</option>
+                                <option ${o.isBatch == "1" ?'selected':''} value="1">是</option>
+                            </select>
                         </div>
-                    </div>
 
-                    <div class="col-md-2 title">是否转船</div>
-                    <div class="col-md-4 data">
-                        <div class="form-group form-inline">
-                            <div class="radio"><label><input type="radio" ${shippingOrder.isTrans=="是"?'checked':''} name="isTrans" value="1">是</label></div>
-                            <div class="radio"><label><input type="radio" ${shippingOrder.isTrans=="否"?'checked':''} name="isTrans" value="0">否</label></div>
+                        <div class="col-md-2 title">是否交易:</div>
+                        <div class="col-md-4 data">
+                            <select class="form-control" name="isTrans">
+                                <option value="">请选择</option>
+                                <option ${o.isTrans == "0" ?'selected':''} value="0">否</option>
+                                <option ${o.isTrans == "1" ?'selected':''} value="1">是</option>
+                            </select>
                         </div>
+
+                        <div class="col-md-2 title">提单份数:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="提单份数" name="copyNum" value="${shipping.copyNum}">
+                        </div>
+
+                        <div class="col-md-2 title">特殊条款:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="特殊条款" name="specialCondition" value="${shipping.specialCondition}">
+                        </div>
+
+                        <div class="col-md-2 title">运费:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="运费" name="freight" value="${shipping.freight}">
+                        </div>
+
+                        <div class="col-md-2 title">校验人:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" placeholder="校验人" name="checkBy" value="${shipping.checkBy}">
+                        </div>
+
+                        <div class="col-md-2 title">状态:</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" name="state" value="${o.state == 1 ? "已上报" : "草稿"}" />
+                            <%--<c:if test="${o.state==0}">草稿</c:if>
+                            <c:if test="${o.state==1}"><font color="green">已上报</font></c:if>--%>
+                        </div>
+
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 data"></div>
+
+                        <div class="col-md-2 title rowHeight2x">备注</div>
+                        <div class="col-md-10 data rowHeight2x">
+                            <textarea class="form-control" rows="3" placeholder="备注" name="remark">${shipping.remark}</textarea>
+                        </div>
+
                     </div>
+                </form>
+            </div>
+            <!--订单信息/-->
 
-                    <div class="col-md-2 title">份数</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="份数" name="copyNum" value="${shippingOrder.copyNum}">
-                    </div>
+            <!--工具栏-->
+            <div class="box-tools text-center">
+                <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+            </div>
+            <!--工具栏/-->
 
-                    <div class="col-md-2 title">扼要说明</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="扼要说明" name="remark" value="${shippingOrder.remark}">
-                    </div>
-
-                    <div class="col-md-2 title">运输要求</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="运输要求" name="specialCondition" value="${shippingOrder.specialCondition}">
-                    </div>
-
-                    <div class="col-md-2 title">复核人</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="复核人" name="checkBy" value="${shippingOrder.checkBy}">
-                    </div>
-                </div>
-          </form>
-        </div>
-        <!--订单信息/-->
-
-        <!--工具栏-->
-        <div class="box-tools text-center">
-            <!--<button type="button" onclick='document.getElementById("editForm").submit()' class="btn bg-maroon">保存</button>-->
-            <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
-        </div>
-        <!--工具栏/-->
-
-    </section>
-    <!-- 正文区域 /-->
+        </section>
+        <!-- 正文区域 /-->
 
 </div>
 <!-- 内容区域 /-->
@@ -164,17 +180,16 @@
 <script src="../../plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
 <link rel="stylesheet" href="../../css/style.css">
 <script>
-    $('#signingDate').datepicker({
-        autoclose: true,
-        format: 'yyyy-mm-dd'
-    });
-    $('#deliveryPeriod').datepicker({
-        autoclose: true,
-        format: 'yyyy-mm-dd'
-    });
-    $('#shipTime').datepicker({
+    $('#loadingDate').datepicker({
         autoclose: true,
         format: 'yyyy-mm-dd'
     });
 </script>
+<script>
+    $('#limitDate').datepicker({
+        autoclose: true,
+        format: 'yyyy-mm-dd'
+    });
+</script>
+
 </html>

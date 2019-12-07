@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.dao.cargo.PackingDao">
+
+    <resultMap id="BaseResultMap" type="cn.itcast.domain.cargo.Packing">
+        <id column="packing_list_id" property="packingListId"/>
+        <result column="invoice_no" property="invoiceNo"/>
+        <result column="invoice_date" property="invoiceDate"/>
+        <result column="export_id" property="exportId"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="create_time" property="createTime"/>
+        <result column="company_id" property="companyId"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+
+
+    <select id="findAll" parameterType="string" resultMap="BaseResultMap">
+        select * from co_packing_list where company_id=#{companyId}
+    </select>
+
+    <insert id="save" parameterType="packing">
+        INSERT INTO `co_packing_list` (
+          `packing_list_id`,
+          `seller`,
+          `buyer`,
+          `invoice_no`,
+          `invoice_date`,
+          `marks`,
+          `descriptions`,
+          `export_id`,
+          `state`,
+          `create_by`,
+          `create_dept`,
+          `create_time`,
+          `company_id`,
+          `company_name`
+        )
+        VALUES
+          (
+            #{packingListId},#{seller},#{buyer},#{invoiceNo},#{invoiceDate},#{marks},#{descriptions},
+            #{exportId},#{state},#{createBy},#{createDept},#{createTime},#{companyId},#{companyName}
+          );
+    </insert>
+
+    <update id="update" parameterType="packing">
+        UPDATE `co_packing_list`
+        <set>
+            <if test="seller!=null and seller!=''">
+                seller=#{seller},
+            </if>
+            <if test="buyer!=null and buyer!=''">
+                buyer=#{buyer},
+            </if>
+            <if test="invoiceNo!=null and invoiceNo!=''">
+                invoice_no=#{invoiceNo},
+            </if>
+            <if test="invoiceDate!=null and invoiceDate!=''">
+                invoice_date=#{invoiceDate},
+            </if>
+            <if test="marks!=null and marks!=''">
+                marks=#{marks},
+            </if>
+            <if test="descriptions!=null and descriptions!=''">
+                descriptions=#{descriptions},
+            </if>
+            <if test="exportId!=null and exportId!=''">
+                export_id=#{exportId},
+            </if>
+            <if test="state!=null and state!=''">
+                state=#{state},
+            </if>
+            <if test="createBy!=null and createBy!=''">
+                create_by=#{createBy},
+            </if>
+            <if test="createDept!=null and createDept!=''">
+                create_dept=#{createDept},
+            </if>
+            <if test="createTime!=null and createTime!=''">
+                create_time=#{createTime},
+            </if>
+            <if test="companyId!=null and companyId!=''">
+                company_id=#{companyId},
+            </if>
+            <if test="companyName!=null and companyName!=''">
+                company_name=#{companyName}
+            </if>
+        </set>
+        WHERE
+        packing_list_id = #{packingListId};
+    </update>
+
+    <select id="findById" parameterType="string" resultMap="BaseResultMap">
+        select * from co_packing_list where packing_list_id = #{packingListId}
+    </select>
+
+    <select id="findByState" parameterType="map" resultMap="BaseResultMap">
+        select * from co_packing_list where company_id = #{companyId} and state = #{state}
+    </select>
+
+    <delete id="delete" parameterType="string">
+        delete * from co_packing_list where packing_list_id = #{packingListId}
+    </delete>
+
+</mapper>
