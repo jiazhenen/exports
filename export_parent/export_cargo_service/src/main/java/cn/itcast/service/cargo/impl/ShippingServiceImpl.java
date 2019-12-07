@@ -44,7 +44,7 @@ public class ShippingServiceImpl implements ShippingService {
         Packing packing = packingDao.findById(packingListId);
 
         // 修改装箱单的状态 1 - 2委托
-        packing.setState(2);
+        packing.setState(3);
         packingDao.update(packing);
 
         // 查询报运单
