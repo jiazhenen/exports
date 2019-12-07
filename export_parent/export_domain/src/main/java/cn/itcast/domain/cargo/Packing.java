@@ -1,6 +1,10 @@
 package cn.itcast.domain.cargo;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.Serializable;
 import java.util.Date;
