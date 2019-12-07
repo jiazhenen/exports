@@ -19,4 +19,6 @@ public interface ExportService {
 	PageInfo findAll(ExportExample example, int page, int size);
 
     void updateE(ExportResult exportResult);
+
+    PageInfo findByState(int page, int size, int i, String companyId);
 }
