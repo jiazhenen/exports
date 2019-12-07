@@ -43,13 +43,13 @@
                 <input type="hidden" id="id" name="invoiceId" value="${invoice.invoiceId}">
 
 
-                <%--            算啦  这样写不好 --%>
+
                 <div class="row data-type" style="margin: 0px">
 
-                    <div class="col-md-2 title">发票号</div>
-                    <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="发票号" name="scNo" value="${invoice.invoiceId}">
-                    </div>
+<%--                    <div class="col-md-2 title">发票号</div>--%>
+<%--                    <div class="col-md-4 data">--%>
+<%--                        <input type="text" class="form-control" placeholder="发票号" name="scNo" value="${invoice.invoiceId}">--%>
+<%--                    </div>--%>
 
                     <div class="col-md-2 title">贸易条款</div>
                     <div class="col-md-4 data">
@@ -65,6 +65,14 @@
             </div>
             <!--订单信息-->
 
+
+
+            <!--工具栏-->
+            <div class="box-tools text-center">
+                <button type="button" onclick='document.getElementById("editForm").submit()' class="btn bg-maroon">保存</button>
+                <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+            </div>
+            <!--工具栏/-->
             <%--    </section>
                 <!-- 正文区域 /-->
 
@@ -172,13 +180,19 @@
                 <!-- /.box-footer-->
             </div>
         </form>
-        <!--工具栏-->
-        <div class="box-tools text-center">
-            <button type="button" onclick='document.getElementById("editForm").submit()' class="btn bg-maroon">保存</button>
-            <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
-        </div>
-        <!--工具栏/-->
+
     </section>
+    <!-- 提交表单 -->
+    <script>
+        function submitFun() {
+            let checkedIdValue = $('#checkedId').val();
+            if (checkedIdValue == null || '' === checkedIdValue) {
+                alert("委托单不能为空!");
+            } else {
+                $('#editForm').submit();
+            }
+        }
+    </script>
 
 </div>
 <!-- 内容区域 /-->
