@@ -47,6 +47,9 @@ public class InvoiceController extends BaseController {
 
     @RequestMapping(value = "/toAdd", name = "进入添加发票页面")
     public String toAdd() {
+//        PageInfo page =
+//                request.setAttribute("page",page);
+
         return "cargo/invoice/invoice-add";
     }
 
