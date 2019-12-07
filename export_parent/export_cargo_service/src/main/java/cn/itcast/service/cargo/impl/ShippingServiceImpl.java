@@ -71,6 +71,12 @@ public class ShippingServiceImpl implements ShippingService {
 
     @Override
     public void delete(String shippingOrderId) {
+        Packing packing = packingDao.findById(shippingOrderId);
+        packing.setState(1); // 状态 2 -> 1 已上报
+
+        Export export = exportDao.selectByPrimaryKey(packing.getExportId());
+        export.setState(4); // 状态 4 -> 3 装箱
+
         shippingDao.deleteByPrimaryKey(shippingOrderId);
     }
 
