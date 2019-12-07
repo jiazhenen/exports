@@ -15,6 +15,8 @@ public interface ShippingService {
 
     void delete(String id);
 
+
     PageInfo findAll(ShippingExample shippingExample, int page, int size);
 
+    PageInfo findByState(int page, int size, int i, String companyId);
 }

@@ -1,7 +1,9 @@
 package cn.itcast.controller.cargo;
 
+
 import cn.itcast.controller.BaseController;
-import cn.itcast.domain.cargo.*;
+import cn.itcast.domain.cargo.Export;
+import cn.itcast.domain.cargo.Packing;
 import cn.itcast.service.cargo.ExportService;
 import cn.itcast.service.cargo.PackingService;
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 //装箱
@@ -83,5 +86,11 @@ public class PackingController extends BaseController {
     public String delete(String id) {
         packingService.delete(id);
         return "redirect:/cargo/packing/list.do";
+    }
+    @RequestMapping(value = "/toView",name = "查看装箱单")
+    public String toView(String id) {
+        Packing packing = packingService.findById(id);
+        request.setAttribute("packing",packing);
+        return "cargo/packing/packing-view";
     }
 }
