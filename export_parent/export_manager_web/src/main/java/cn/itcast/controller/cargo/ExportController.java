@@ -17,6 +17,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.jaxrs.client.WebClient;
+import org.apache.zookeeper.data.Stat;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -140,5 +141,21 @@ public class ExportController extends BaseController {
         ExportResult exportResult = WebClient.create("http://localhost:9090/ws/export/ep/" + id).get(ExportResult.class);
         exportService.updateE(exportResult);
         return "redirect:/cargo/export/list.do";
+    }
+
+//    private String shipmentPort;		//装船港
+//    private String destinationPort;		//目的港
+
+    @RequestMapping(value = "/map",name = "地图")
+    public String Map(String id){
+        Export byId = exportService.findById(id);
+        //调用exportService,查询装船港,目的港
+        String start = byId.getShipmentPort();
+        String end = byId.getDestinationPort();
+        System.out.println(start);
+        System.out.println(end);
+        request.setAttribute("start",start);
+        request.setAttribute("end",end);
+        return "forward:/map.jsp";
     }
 }

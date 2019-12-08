@@ -4,6 +4,7 @@ package cn.itcast.service.cargo;
 
 import cn.itcast.domain.cargo.Factory;
 import cn.itcast.domain.cargo.FactoryExample;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 import java.util.Map;
@@ -34,4 +35,6 @@ public interface FactoryService {
 
 	//查询所有
 	public List<Factory> findAll(FactoryExample example);
+
+    PageInfo findPage(int pageNum, int pageSize);
 }
