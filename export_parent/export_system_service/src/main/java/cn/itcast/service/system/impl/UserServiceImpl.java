@@ -101,6 +101,13 @@ public class UserServiceImpl implements UserService {
         return userDao.findByEmail(email);
     }
 
+    @Override
+    public User findUserById(String id) {
+        User user = userDao.findById(id);
+        return user;
+
+    }
+
     public static void main(String[] args) {
         System.out.println(new Md5Hash("123456","admin@export.com",2).toString());
         System.out.println(new Md5Hash("123456","laowang@export.com",2).toString());

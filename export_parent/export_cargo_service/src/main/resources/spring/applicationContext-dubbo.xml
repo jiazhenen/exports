@@ -22,7 +22,8 @@
 <!--连接zookeeper-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 <!--    扫描的就是dubbo的@Service注解-->
-    <dubbo:annotation package="cn.itcast.service.cargo.impl"/>
+    <!--<dubbo:annotation package="cn.itcast.service.cargo.impl"/>-->
+    <dubbo:annotation package="cn.itcast.service"/>
 
     <!--    service开始-->
     <context:component-scan base-package="cn.itcast.service"/>
