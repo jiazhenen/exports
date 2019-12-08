@@ -1,6 +1,7 @@
 package cn.itcast.service.system;
 
 import cn.itcast.domain.system.User;
+import cn.itcast.domain.systemback.Systemback;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -24,4 +25,8 @@ public interface UserService {
     List<String> findRoleIdsByUserId(String id);
 
     User findByEmail(String email);
+
+    User findUserById(String id);
+
+
 }
