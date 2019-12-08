@@ -32,6 +32,8 @@ public interface SassbackService {
     //查询所有
     public List<Factory> findAll(FactoryExample example);
 
+
+
     Sassfeedback selectSassfeedbackById(String id);
 
     void addSassfeedback(Sassfeedback sassfeedback);

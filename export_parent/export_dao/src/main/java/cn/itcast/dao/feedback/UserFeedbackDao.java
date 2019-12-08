@@ -28,4 +28,6 @@ public interface UserFeedbackDao {
     int updateByPrimaryKeySelective(Feedback record);
 
     int updateByPrimaryKey(Feedback record);
+
+    void save(Feedback feedback);
 }

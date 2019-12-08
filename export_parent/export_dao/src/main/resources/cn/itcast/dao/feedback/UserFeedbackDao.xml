@@ -430,4 +430,51 @@
       COMPANY_NAME = #{companyName,jdbcType=VARCHAR}
     where FEEDBACK_ID = #{feedbackId,jdbcType=VARCHAR}
   </update>
+
+
+  <insert id="save"  parameterType="cn.itcast.domain.feedback.Feedback">
+    INSERT into pe_userfeedback(
+    FEEDBACK_ID,
+    INPUT_BY,
+    INPUT_TIME,
+    TITLE,
+    CONTENT,
+    CLASS_TYPE,
+    TEL,
+    ANSWER_BY,
+    ANSWER_TIME,
+    SOLVE_METHOD,
+    RESOLUTION,
+    DIFFICULTY,
+    IS_SHARE,
+    STATE,
+    CREATE_BY,
+    CREATE_DEPT,
+    CREATE_TIME,
+    COMPANY_ID,
+  COMPANY_NAME
+    )
+    VALUES (
+#{inputBy,jdbcType=VARCHAR},
+#{inputTime,jdbcType=TIMESTAMP},
+#{title,jdbcType=VARCHAR},
+#{content,jdbcType=VARCHAR},
+#{classType,jdbcType=VARCHAR},
+#{tel,jdbcType=VARCHAR},
+#{answerBy,jdbcType=VARCHAR},
+#{answerTime,jdbcType=TIMESTAMP},
+#{solveMethod,jdbcType=VARCHAR},
+#{resolution,jdbcType=VARCHAR},
+#{difficulty,jdbcType=VARCHAR},
+#{isShare,jdbcType=VARCHAR},
+#{state,jdbcType=VARCHAR},
+#{createBy,jdbcType=VARCHAR},
+#{createDept,jdbcType=VARCHAR},
+#{createTime,jdbcType=TIMESTAMP},
+#{companyId,jdbcType=VARCHAR},
+#{companyName,jdbcType=VARCHAR},
+#{feedbackId,jdbcType=VARCHAR}
+    )
+
+  </insert>
 </mapper>

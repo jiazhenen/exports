@@ -1,6 +1,8 @@
 package cn.itcast.controller.feedback;
 
 
+import cn.itcast.domain.cargo.ShippingExample;
+import cn.itcast.service.feedback.FeedbackService;
 import cn.itcast.service.feedback.UserFeedbackService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
@@ -19,6 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+import java.util.UUID;
+
 @Controller
 @RequestMapping({"/system/userfeedback"})
 public class UserFeedbackController extends BaseController {
@@ -31,29 +36,18 @@ public class UserFeedbackController extends BaseController {
     }
 
     @RequestMapping({"/list"})
-    public String list(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "2") Integer pageSize, Model model) {
-        User user = this.userService.findUserById(getUser().getCreateBy());
-        Integer degree = 4;
-        if (user != null) {
-            degree = user.getDegree();
-        }
+    public String list(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer size) {
 
-        FeedbackExample example = new FeedbackExample();
-        Criteria criteria = example.createCriteria();
-        criteria.andCompanyIdEqualTo(getCompanyId());
-        switch(degree) {
-            case 2:
-                criteria.andCreateDeptLike(getUser().getDeptName() + "%");
-                break;
-            case 3:
-                criteria.andCreateDeptEqualTo(getUser().getDeptName());
-                break;
-            case 4:
-                criteria.andCreateByEqualTo("传智播客");
-        }
-
-        PageInfo<Feedback> pageNum = this.userFeedbackService.selectAll(example, page, pageSize);
-        this.request.setAttribute("page", pageNum);
+//        ShippingExample shippingExample = new ShippingExample();
+//        shippingExample.createCriteria().andCompanyIdEqualTo(getCompanyId());
+//        shippingExample.setOrderByClause("create_time desc");
+//        PageInfo pageInfo = shippingService.findAll(shippingExample, page, size);
+//        // 将查询信息
+//        request.setAttribute("page", pageInfo);
+        FeedbackExample feedbackExample = new FeedbackExample();
+        feedbackExample.createCriteria().andCompanyIdEqualTo(getCompanyId());
+        PageInfo pageInfo= userFeedbackService.selectAll(feedbackExample, page, size);
+        request.setAttribute("page", pageInfo);
         return "feedback/userfeedback/userfeedback-list";
     }
 
@@ -99,7 +93,7 @@ public class UserFeedbackController extends BaseController {
     public String edit(Feedback feedback) {
         if (feedback != null) {
             if (StringUtils.isEmpty(feedback.getFeedbackId())) {
-                this.addFeedback(feedback);
+                addFeedback(feedback);
             } else {
                 this.updateFeedback(feedback);
             }
@@ -109,6 +103,7 @@ public class UserFeedbackController extends BaseController {
     }
 
     private void addFeedback(Feedback feedback) {
+        feedback.setFeedbackId(UUID.randomUUID().toString());
         feedback.setCompanyId(getCompanyId());
         feedback.setCompanyName(getCompanyName());
         feedback.setCreateDept(getUser().getCreateDept());

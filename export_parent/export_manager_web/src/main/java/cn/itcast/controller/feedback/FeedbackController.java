@@ -12,6 +12,8 @@ import cn.itcast.service.feedback.UserFeedbackService;
 import cn.itcast.service.system.UserService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,11 +77,9 @@ public class FeedbackController extends BaseController {
 
     @RequestMapping({"/edit"})
     public String edit(Feedback feedback) {
-        System.out.println("11");
-        System.out.println(feedback);
         feedback.setState(5);
         System.out.println(feedback);
-        this.userFeedbackService.update(feedback);
+        userFeedbackService.updateFeedback(feedback);
         return "redirect:/system/feedback/list.do";
     }
 
