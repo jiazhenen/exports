@@ -20,7 +20,7 @@ on soi.A1=t.hours
     </select>
 
     <select id="product"  resultType="map">
-       SELECT `describe` AS `name`,price `value` FROM co_product ORDER BY price DESC LIMIT 10;
+       SELECT `description` AS `name`,price `value` FROM co_product ORDER BY price DESC LIMIT 10;
     </select>
     <select id="caozuo" parameterType="string" resultType="map">
         SELECT ip AS `name`, COUNT(ip) AS `value`

@@ -22,11 +22,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 @RequestMapping("/cargo/export")
@@ -157,5 +155,19 @@ public class ExportController extends BaseController {
         request.setAttribute("start",start);
         request.setAttribute("end",end);
         return "forward:/map.jsp";
+    }
+    @RequestMapping(value = "/maps",name = "地图")
+    @ResponseBody
+    public Map Maps(String id){
+        Export byId = exportService.findById(id);
+        //调用exportService,查询装船港,目的港
+        String start = byId.getShipmentPort();
+        String end = byId.getDestinationPort();
+        System.out.println(start);
+        System.out.println(end);
+        Map map = new HashMap();
+        map.put("start",start);
+        map.put("end",end);
+        return map;
     }
 }

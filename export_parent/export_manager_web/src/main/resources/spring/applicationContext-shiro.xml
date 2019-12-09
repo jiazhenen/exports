@@ -32,6 +32,7 @@
                 /make/** = anon
                 /plugins/** = anon
                 /login.do = anon
+                /wx-login.do = anon
                <!-- 当前登录人必须有“部门管理”和“删除部门”的权限才能访问此方法-->
                 /system/dept/list.do = myPerms["部门管理","删除部门"]
                 <!--  /system/module/list.do = perms["模块管理","SSSS"]

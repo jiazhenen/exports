@@ -5,6 +5,8 @@ import cn.itcast.domain.system.Module;
 import cn.itcast.domain.system.User;
 import cn.itcast.service.system.ModuleService;
 import cn.itcast.service.system.UserService;
+import com.sun.org.apache.bcel.internal.generic.I2F;
+import net.sf.jasperreports.engine.util.JRStyledText;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -14,11 +16,13 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class LoginController{
@@ -91,7 +95,39 @@ public class LoginController{
 
 
 	}
+    @RequestMapping(value = "/wx-login" ,name = "进入新增用户页面")
+    public String  wxogin(String code,String state){
+//        查询本企业的所有部门
+        //String code = loginMap.get("code");//获取用户名
+        User users = userService.wxLogin(code) ;
 
+        if (users != null){
+
+//        1、创建令牌
+            UsernamePasswordToken token = new UsernamePasswordToken(users.getEmail(),users.getPassword());
+//        2、获取主题
+            Subject subject = SecurityUtils.getSubject();
+//        3、开始认证
+            try {
+                subject.login(token); //AuthenticationToken
+            } catch (AuthenticationException e) {
+                request.setAttribute("error","邮箱或密码错误");
+                return "forward:/login.jsp";  //请求转发
+            }
+//        页面上需要从session中获取当前登录人和当前登录人的菜单
+
+//        获取主角：user
+
+            session.setAttribute("loginUser",users);
+            //        根据用户查询菜单
+            List<Module> moduleList = moduleService.findModuleListByUser(users);
+            session.setAttribute("modules",moduleList);
+            return "home/main";
+        }else {
+            request.setAttribute("error","微信未绑定邮箱,请使用邮箱登录后绑定微信");
+            return "forward:/login.jsp";  //请求转发
+        }
+    }
     //退出
     @RequestMapping(value = "/logout",name="用户登出")
     public String logout(){

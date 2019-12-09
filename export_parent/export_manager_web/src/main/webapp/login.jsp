@@ -28,7 +28,7 @@
         <a href="all-admin-index.html">SaaS外贸出口云平台</a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="login-box-body" id="ptdenglu"  style="display: block;>
         <p class="login-box-msg">登录系统</p>
         <form action="/login.do" method="post">
             <div class="form-group has-feedback">
@@ -53,13 +53,19 @@
         <div class="social-auth-links text-center">
             <p>- 或者 -</p>
             <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-qq"></i> 腾讯QQ用户登录</a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-weixin"></i> 微信用户登录</a>
+            <button     class="btn btn-block btn-social btn-success btn-flat" onclick="weixinLogin()"><i class="fa fa-weixin"></i> 微信用户登录</button>
         </div>
+    </div>
+    <div id="wxlogin" class="login-box-body" style="display: none;">
+
+        <div id="weixin"></div>
+        <button class="btn btn-block btn-social btn-google btn-flat" onclick="ptLogin()"><i class="fa fa-envelope"></i> 账号密码登录</button>
     </div>
 </div>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/iCheck/icheck.min.js"></script>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <script>
     $(function() {
         $('input').iCheck({
@@ -68,6 +74,28 @@
             increaseArea: '20%' // optional
         });
     });
+    function weixinLogin() {
+        var obj = new WxLogin({
+            id: "weixin",
+            appid: "wx3bdb1192c22883f3",
+            scope: "snsapi_login",
+            redirect_uri: "http://note.java.itcast.cn/wx-login.do"
+        });
+
+
+
+
+        var divw=document.getElementById("wxlogin");
+        var divp=document.getElementById("ptdenglu");
+        divw.style.display='block';
+        divp.style.display='none';
+    }
+    function ptLogin() {
+        var divw=document.getElementById("wxlogin");
+        var divp=document.getElementById("ptdenglu");
+        divp.style.display='block';
+        divw.style.display='none';
+    }
 </script>
 </body>
 </html>

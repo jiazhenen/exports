@@ -1,10 +1,7 @@
 package cn.itcast.controller.system;
 
 import cn.itcast.controller.BaseController;
-import cn.itcast.domain.system.Dept;
-import cn.itcast.domain.system.Role;
-import cn.itcast.domain.system.SysLog;
-import cn.itcast.domain.system.User;
+import cn.itcast.domain.system.*;
 import cn.itcast.service.system.DeptService;
 import cn.itcast.service.system.RoleService;
 import cn.itcast.service.system.UserService;
@@ -12,11 +9,13 @@ import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -114,5 +113,53 @@ public class UserController extends BaseController {
          userService.changeRole(userid,roleIds);
 //         重定向到用户列表
         return "redirect:/system/user/list.do";
+    }
+    @RequestMapping(value = "/bangding" ,name = "绑定微信")
+    //code=011zsK8F104ed801OHaF1cXx8F1zsK84&state=undefined
+    public String bangding(String code,String state){
+        User user = getUser();
+//        String code = loginMap.get("code");
+        WxUser wxUser = userService.findByUserid(user.getId());
+        if (wxUser != null ){
+//            request.setAttribute("me","亲您已绑定微信");
+            return "system/user/wxsuccess";
+        }else {
+            //重定向到用户列表
+            userService.wxbangd(code,user.getId());
+            request.setAttribute("user",user);
+            return "system/user/wxsuccess";
+        }
+//
+    }
+    @RequestMapping(value = "/cxbd" ,name = "重新绑定微信")
+    //code=011zsK8F104ed801OHaF1cXx8F1zsK84&state=undefined
+    public String cxbd(){
+        User user = getUser();
+
+     userService.deleteByUserid(user.getId());
+
+            return "system/user/wxuser";
+//
+    }
+    @RequestMapping(value = "/toWeixin" ,name = "绑定微信")
+    public String toWeixin(){
+        User user = getUser();
+        WxUser wxUser = userService.findByUserid(user.getId());
+        if (wxUser != null ){
+            request.setAttribute("me","亲您已绑定微信");
+            return "system/user/wxuser";
+        }else {
+            //重定向到用户列表
+           request.setAttribute("me","扫码绑定微信");
+            return "system/user/wxuser";
+        }
+//
+    }
+    @RequestMapping(value = "/toHome" ,name = "首页")
+    public String toHome(){
+            return "/home/home";
+        }
+    public static void main(String[] args) {
+
     }
 }

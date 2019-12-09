@@ -1,6 +1,7 @@
 package cn.itcast.service.system;
 
 import cn.itcast.domain.system.User;
+import cn.itcast.domain.system.WxUser;
 import cn.itcast.domain.systemback.Systemback;
 import com.github.pagehelper.PageInfo;
 
@@ -29,4 +30,11 @@ public interface UserService {
     User findUserById(String id);
 
 
+    User wxLogin(String code);
+
+    void wxbangd(String code, String userid);
+
+    WxUser findByUserid(String userid);
+
+    void deleteByUserid(String id);
 }

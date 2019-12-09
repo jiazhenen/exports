@@ -2,7 +2,9 @@ package cn.itcast.service.system.impl;
 
 import cn.itcast.dao.system.UserDao;
 import cn.itcast.domain.system.User;
+import cn.itcast.domain.system.WxUser;
 import cn.itcast.service.system.UserService;
+import cn.itcast.utils.HttpUtils;
 import cn.itcast.utils.MailUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -106,6 +108,57 @@ public class UserServiceImpl implements UserService {
         User user = userDao.findById(id);
         return user;
 
+    }
+    //AppID : wx3bdb1192c22883f3
+    //AppSecret : db9d6b88821df403e5ff11742e799105
+    private String appid = "wx3bdb1192c22883f3";
+    private String secret = "db9d6b88821df403e5ff11742e799105";
+    private String accessTokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token";
+    private String wxInfoUrl = "https://api.weixin.qq.com/sns/oauth2/access_token";
+
+    @Override
+    public User wxLogin(String code) {
+        WxUser wxuser = null;
+        User user = null;
+        //1.根据code获取access_token和openId
+        String atUtl = accessTokenUrl + "?code="+code+"&appid="+appid+"&secret="+secret+"&grant_type=authorization_code";
+        System.out.println(atUtl);
+        Map<String, Object> map1 = HttpUtils.sendGet(atUtl);
+        Object access_token = map1.get("access_token");
+        Object openid = map1.get("openid").toString();
+        if(access_token == null && openid == null) {
+            return user;
+        }
+        wxuser = userDao.findByOpenid(openid.toString());
+        if(wxuser != null) {
+            System.out.println("返回数据库中的用户对象");
+            //3.如果用户存在返回用户信息
+            return userDao.findById(wxuser.getUserid());
+        }
+        return user;
+    }
+
+    @Override
+    public void wxbangd(String code,String userid) {
+        WxUser wxUser = new WxUser();
+        //1.根据code获取access_token和openId
+        String atUtl = accessTokenUrl + "?code="+code+"&appid="+appid+"&secret="+secret+"&grant_type=authorization_code";
+        System.out.println(atUtl);
+        Map<String, Object> map1 = HttpUtils.sendGet(atUtl);
+        Object access_token = map1.get("access_token");
+        Object openid = map1.get("openid").toString();
+        wxUser.setOpenid(openid.toString());
+        wxUser.setUserid(userid);
+        userDao.saveWxuser(wxUser);
+    }
+    @Override
+    public WxUser findByUserid(String userid) {
+        return userDao.findByUserid(userid);
+    }
+
+    @Override
+    public void deleteByUserid(String id) {
+        userDao.deleteByIda(id);
     }
 
     public static void main(String[] args) {

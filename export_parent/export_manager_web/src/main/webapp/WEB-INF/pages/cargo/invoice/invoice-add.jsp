@@ -40,7 +40,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">编辑新增发票</div>
 
-                <input type="hidden" id="id" name="invoiceId" value="${invoice.invoiceId}">
+                <input type="hidden" id="checkedId" name="invoiceId" value="${invoice.invoiceId}">
 
 
 
@@ -122,7 +122,7 @@
                             <tbody>
                             <c:forEach items="${page.list}" var="o" varStatus="status">
                                 <tr>
-                                    <td><input type="checkbox" name="id" value="${o.shippingOrderId}"/></td>
+                                    <td><input type="checkbox" onclick="clickCheck()" name="shippingOrderId" value="${o.shippingOrderId}"/></td>
                                     <td>${o.shipper}</td>
                                     <td><a href="${ctx}/cargo/shipping/toView.do?id=${o.shippingOrderId}">${o.shippingOrderId}</a></td>
                                     <td>${o.consignee}</td>
@@ -146,8 +146,8 @@
                                     <td>${o.freight}</td>
                                         <%--<td>${o.checkBy}</td>--%>
                                     <td><c:if test="${o.state==0}"><font color="red">草稿</font></c:if>
-                                        <c:if test="${o.state==1}"><font color="green">提交</font></c:if>
-                                        <c:if test="${o.state==2}"><font color="grey">作废</font></c:if>
+                                        <c:if test="${o.state==1}"><font color="green">已上报</font></c:if>
+                                        <c:if test="${o.state==2}"><font color="grey">发票</font></c:if>
                                     </td>
                                         <%--<td>${o.createBy}</td>--%>
                                         <%--<td>${o.createTime}</td>--%>
@@ -182,6 +182,20 @@
         </form>
 
     </section>
+    <!-- 获取选中的装箱单id, 存放到表单的隐藏域中 -->
+    <script>
+        function clickCheck() {
+
+            let size = $("input:checkbox:checked").length;
+            if (1 !== size) {
+                alert("请勾选待处理的记录，且每次只能勾选一个");
+                $("input:checkbox:checked").prop("checked", false)
+            } else {
+                $('#checkedId').val($('input[type=checkbox]:checked').val());
+
+            }
+        }
+    </script>
     <!-- 提交表单 -->
     <script>
         function submitFun() {
