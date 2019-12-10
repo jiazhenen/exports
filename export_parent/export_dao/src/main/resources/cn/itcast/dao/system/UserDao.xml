@@ -181,7 +181,7 @@
     <delete id="deleteById" parameterType="string">
         delete from pe_user where user_id=#{id}
     </delete>
-    <delete id="deleteByIdd" parameterType="string">
+    <delete id="deleteByIda" parameterType="string">
         delete from pe_wx_user where user_id=#{id}
     </delete>
     <insert id="saveUserAndRole">
